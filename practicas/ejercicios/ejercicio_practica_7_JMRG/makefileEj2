@@ -1,0 +1,23 @@
+#Nombre del archivo: makefileEj2
+#Uso: make -f makefileEj2
+#Descripción: Genera el programa principal compilado y un
+#	      fichero ejecutable denominado Practica7
+#
+#Variable que indica el compilador
+CC=g++
+#Variable que indica el directorio de los ficheros include
+INCLUDE_DIR=./
+
+Practica7: main2.o libmath.a libfunctions.a
+	$(CC) -L./ -o $@ $< -lmath -lfunctions
+
+main2.o: main2.cpp
+	$(CC) -o $@ -I$(INCLUDE_DIR) -c $^
+
+libmath.a: tan.cpp cos.cpp sin.cpp
+	$(CC) -I$(INCLUDE_DIR) -c $^
+	ar rvs $@ tan.o cos.o sin.o
+
+libfunctions.a: hello.cpp factorial.cpp
+	$(CC) -I$(INCLUDE_DIR) -c $^
+	ar rvs $@ hello.o factorial.o

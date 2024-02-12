@@ -1,0 +1,18 @@
+#Nombre del archivo: makefileEj1
+#Uso: make -f makefileEj1
+#Descripción: Genera el programa principal compilado y un
+#	      fichero ejecutable denominado Practica7
+
+Practica7: main2.o libmath.a libfunctions.a
+	g++ -L./ -o Practica7 main2.o -lmath -lfunctions
+
+main2.o: main2.cpp
+	g++ -c main2.cpp
+
+libmath.a: tan.cpp cos.cpp sin.cpp
+	g++ -c tan.cpp cos.cpp sin.cpp
+	ar rvs libmath.a tan.o cos.o sin.o
+
+libfunctions.a: hello.cpp factorial.cpp
+	g++ -c hello.cpp factorial.cpp
+	ar rvs libfunctions.a hello.o factorial.o

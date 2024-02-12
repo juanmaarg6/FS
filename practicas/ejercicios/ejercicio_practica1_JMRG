@@ -1,0 +1,17 @@
+Alumno: Juan Manuel Rodríguez Gómez
+
+1.
+
+	mkdir mnt home
+	mkdir home/luis home/pedro
+	cd home/luis
+	touch Carta.txt
+
+2.
+
+	cd luis
+	rm Carta.txt
+
+3.
+
+	ls -l C*.*x

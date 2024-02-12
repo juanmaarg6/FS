@@ -1,0 +1,15 @@
+Nombre: Juan Manuel Rodríguez Gómez
+
+1.	
+	(Suponemos que ya nos encontramos en el directorio /etc/)
+
+	ls -l > ejercicio1.txt
+
+2.
+
+	pwd >> ejercicio1.txt
+
+3.
+
+	(cd root/ ; cat sample.txt && echo "File found") || echo "File not found"
+
